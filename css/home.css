@@ -3,7 +3,7 @@ body{
 }
 /* style so search and share are positioned correctly*/
 #searchshare{
-    
+
     height: 100px;
     display: flex;
     flex-direction:column;
@@ -12,11 +12,11 @@ body{
 /*align share button to center*/
 #share{
     align-self: center;
-    
+
 }
 
 .search {
-    
+
     padding-top: 5px
 
 }
@@ -36,7 +36,7 @@ footer{
     z-index: 1;
     width: 100%;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     text-align:center;
 }
 
@@ -54,7 +54,7 @@ footer a.active-page{
 footer img{
     width: 35px;
     height: 35px;
-} 
+}
 /*personal profile image top left*/
 #myProfile img{
     border-radius: 50%;
@@ -85,7 +85,7 @@ footer img{
     position: relative;
     display: inline;
     padding-left: 10px;
-    top: -5px; 
+    top: -5px;
 }
 
 #result h5{
@@ -100,17 +100,22 @@ footer img{
 }
 #arnold p{
     font-size: 15px;
-    padding-left: 15px;
+    padding-left: 50px;
 }
 
 #pguo p{
     font-size: 15px;
-    padding-left: 15px;
+    padding-left: 50px;
 }
 
 #ed p{
     font-size: 15px;
-    padding-left: 15px;
+    padding-left: 50px;
+}
+
+#post p{
+  font-size: 15px;
+  padding-left:50px;
 }
 
 #ed video{
@@ -162,7 +167,7 @@ button img:visited{
     border-radius: 50%;
     width: 25px;
     height: 25px;
-    margin-left: 10px;  
+    margin-left: 10px;
 }
 
 
