@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled/minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- jQuery Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- <link rel="shortcut icon" href=""> -->
+  <!-- <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">  -->
+  
+   
+  <!-- My Own CSS -->
+  <link rel="stylesheet" href="../css/signup.css">
+  <script src="../js/signup.js"></script>
+
+</head>
+<body>
+ <div class="jumbotron">
+   <h1 align="center">FITFAM</h1>
+   <p align="center">Sign up and find a <strong>FAM</strong></p>
+ </div>
+
+ <form class="form-horizontal">
+   <div class="container">
+     <label for="name"><b>Name</b></label>
+     <input type="text" placeholder="Your Name" name="name" id="myname" required>
+
+     <label for="password"><b>Password</b></label>
+     <input type="password" placeholder="Your Password" name="password" id="mypass" required>
+<!--
+     <label for="email"><b>Email</b></label>
+     <input type="email" placeholder="Your Email" name="email" id="myemail" required> -->
+
+     <!-- <div class="clearfix"> -->
+       <a href="../index.html">
+       <button type="button" class="cancelbtn">Cancel</button>
+       </a>
+       <button type="button" onclick="storeInfo();nextp()" class="signupbtn">Sign Up</button>
+     <!-- </div> -->
+   </div>
+ </form>
+
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Home Page</title>
+        <link href="css/home.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/handlebars-v4.0.11.js"></script>
+    </head>
+
+    <script type="text/javascript">
+         $(document).ready(function(){
+            console.log('hello world');
+            var myName = localStorage.getItem('name');
+            // var myImage = localStorage.getItem('myprof');
+            console.log("where the pic at");
+            var dataImage = localStorage.getItem('profileimg');
+            meImg = document.getElementById('profilepic');
+            meImg.setAttribute('src', dataImage);
+
+
+            var source = $("#post-template").html();
+            var template = Handlebars.compile(source);
+
+            var parentDiv = $("#result");
+
+            //Makes all of the past posts appear through for loop
+            var count = JSON.parse(localStorage.getItem('postNumber'));
+            for(var i=1;i <= count;i++){
+              var past = JSON.parse(localStorage.getItem('myPost'+i));
+
+              var myPost = {'poststring' : past};
+              var html = template(myPost);
+            //  console.log(html);
+              parentDiv.prepend(html);
+            }
+
+
+            $('#buttonPost').click(function(){
+                var dataPost = $("#myModal #examplePost").val().trim();
+
+                var myPost = {'poststring' : dataPost};
+                var html = template(myPost);
+                console.log(html);
+                parentDiv.prepend(html);
+                //localStorage.setItem('post', JSON.stringify(myPost));
+            });
+
+        });
+
+           /* var newPost = JSON.parse(localStorage.getItem('post'));
+            if (newPost){
+                var html = template(newPost);
+                console.log(html);
+                parentDiv.prepend(html);
+            }
+            */
+
+            $(".likeb").click(function(){
+                $(this).toggleClass("liked");
+            });
+
+
+
+
+    </script>
+    <body>
+
+        <div id="searchshare">
+        <!-- <div class="search">
+
+                    <input type="text" placeholder="Search.." name="search">
+
+        </div> -->
+
+        <div id="share">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            Share Something
+        </button>
+        </div>
+        </div>
+
+        <div id="result"></div>
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title">What's Up?</h5>
+                        <button type="button" class="close" data-dismiss="modal">&times;
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="examplePost"></label>
+                            <input type="text" class="form-control" id="examplePost"
+                            aria-describedby="postHelp" placeholder="Share something">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" onclick="storeInfo();" class="btn btn-danger" id="buttonPost" data-dismiss="modal">
+                            Post
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <footer>
+
+                    <a href="home.html">
+                        <img src="images/home.png" alt="home" >
+                    </a>
+
+
+
+                    <a href="html/workout.html">
+                        <img src="images/workout.png" alt="workout" >
+                    </a>
+
+
+
+                    <a href="html/contacts.html">
+                        <img src="images/friends.png" alt="friends">
+                    </a>
+
+
+
+                    <a href="html/caleandar.html">
+                        <img src="images/calendar.png" alt="calendar" >
+                    </a>
+
+
+
+                    <a href="html/settings.html">
+                        <img src="images/settings.png" alt="settings">
+                    </a>
+
+            </footer>
+
+                <div id="messages">
+                    <a href="html/messages.html">
+                        <img src="images/chat.png" alt="messages" style="width:50px;height:50px">
+                    </a>
+                </div>
+
+                <!-- <div id="logs">
+                    <a href="html/logs.html">
+                        <img src="images/logs.png" alt="logs" style="width:25px;height:25px">
+                    </a>
+                </div> -->
+
+                <div id="myProfile">
+                    <a href="html/myProfile.html">
+                        <img id="profilepic" src="images/profpic.jpg" alt="me">
+                    </a>
+                </div>
+
+            <div id="newsfeed">
+                <div class="container" id="pguo">
+                  <div class="panel panel-default">
+                  <div class="panel-body">
+                   <img id="profile" src="images/pguo2.jpg" alt="ex1">
+                   <h5> Philip Guo</h5>
+                   <p>I'm gonna go to RIMAC at around 8PM. Probably hitting up taco stand after,
+                       anyone wanna come?
+                   </p>
+                   <!-- <button class="likeb">
+                   <img id="like" src="images/heart.png" alt="like">
+                   </button> -->
+                   <button id="comm" data-toggle="collapse" data-target="#demo">
+                   <img id="comment" src="images/comment.png" alt="comment">
+                   </button>
+                   <div id="demo" class="collapse">
+                     <input type="text" class="form-control" id="exampleCom" placeholder="Write a comment...">
+                     <button type="button" onclick="storeComment();" class="btn btn-primary btn-xs">post</button>
+                   </div>
+                   </div>
+                   </div>
+                 </div>
+
+                <div class="container" id="ed">
+                  <div class="panel panel-default">
+                  <div class="panel-body">
+                    <img id="profile" src="images/edwin.jpg" alt="ed">
+                    <h5> Edwin Fu</h5>
+                    <p> Gotta make sure your muscles are ROLLED OUT!</p>
+                    <video width="300" height="350" controls>
+                        <source src="videos/roll.mp4" type="video/mp4">
+                    </video>
+                    <!-- <button class="likeb">
+                    <img id="like" src="images/heart.png" alt="like">
+                    </button> -->
+                    <button id="comm">
+                    <img id="comment" src="images/comment.png" alt="comment">
+                    </button>
+                  </div>
+                </div>
+                </div>
+
+                <div class="container" id="arnold">
+                  <div class="panel panel-default">
+                  <div class="panel-body">
+                    <img id="profile" src="images/arnolds.png" class="arn1" alt="arn">
+                    <h5>Arnold Schwarzenegger</h5>
+                    <p>Thought I looked cute, might delete l8er</p>
+                    <img src="images/arnolds.png" class="arn2" alt="arn">
+                    <!-- <button class="likeb">
+                    <img id="like" src="images/heart.png" alt="like">
+                    </button> -->
+                    <button id="comm">
+                    <img id="comment" src="images/comment.png" alt="comment">
+                        </button>
+                      </div>
+                    </div>
+                </div>
+                </div>
+
+            <script id="post-template" type="text/x-handlebars-template">
+              <div class="container newsfeed" id="post">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <img src="images/profpic.jpg" class="roy" alt="roy">
+                    <h5>Roy Zhang</h5>
+                      <p>{{poststring}}</p>
+                        <!-- <button class="likeb">
+                        <img id="like" src="images/heart.png" alt="like">
+                        </button> -->
+                    <button id="comm">
+                      <img id="comment" src="images/comment.png" alt="comment">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </script>
+
+            <script id="comment-template" type="text/x-handlebars-template">
+              <div class="com" id="comment">
+                <h5>{{commentString}}</h5>
+              </div>
+            </script>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/handlebars-v4.0.11.js"></script>
+    <script src="js/home.js"></script>
+
+    </body>
+</html>

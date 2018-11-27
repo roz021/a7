@@ -1,0 +1,63 @@
+#myself img{
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    right: 0;
+    margin: auto;
+}
+
+#myself h2{
+font-size: 15px;
+text-align: center;
+}
+
+#add{
+    position: absolute;
+    top:0;
+    right: 5px;
+}
+
+#bey img{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    margin-left: 10px;
+}
+#bey p{
+    padding-top: 20px;
+    text-align: center;
+}
+
+#edwin img{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 150px;
+    margin-left: 10px; 
+    display: inline-block;
+}
+
+#edwin p{
+    padding-top: 50px;
+    text-align: center;
+    
+}
+
+#pguo img{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 230px;
+    margin-left: 10px;
+}
+
+#pguo p{
+    padding-top: 50px;
+    text-align: center;
+}

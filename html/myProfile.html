@@ -1,0 +1,104 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>Me</title>
+        <link href="../css/home.css" rel="stylesheet">
+          <!-- Latest compiled/minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- jQuery Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <footer>
+
+                    <a href="../home.html">
+                        <img src="../images/home.png" alt="home" >
+                    </a>
+
+
+
+                    <a href="workout.html">
+                        <img src="../images/workout.png" alt="workout" >
+                    </a>
+
+
+
+                    <a href="contacts.html">
+                        <img src="../images/friends.png" alt="friends">
+                    </a>
+
+
+
+                    <a href="caleandar.html">
+                        <img src="../images/calendar.png" alt="calendar" >
+                    </a>
+
+
+
+                    <a href="settings.html">
+                        <img src="../images/settings.png" alt="settings">
+                    </a>
+
+            </footer>
+
+            <div id="messages">
+                <a href="messages.html">
+                    <img src="../images/chat.png" alt="messages" style="width:50px;height:50px">
+                </a>
+            </div>
+
+        <!-- <div id="logs">
+            <a href="logs.html">
+                <h4>Logs</h4>
+            </a>
+        </div> -->
+
+        <div id="myProfile">
+            <a href="myProfile.html">
+                <img src="../images/profpic.jpg" alt="me">
+            </a>
+        </div>
+
+        <div id="profilePic">
+            <!-- <img src="../images/profpic.jpg" alt="Profile Photo" style="width:250px;height:300px"> -->
+            <h1 id="myname"></h1>
+            <h3>BIO</h3>
+            <p id="mybio"></p>
+            <h3>INTERESTS</h3>
+            <p id="interests"></p>
+        </div>
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+        var name = localStorage.getItem('name');
+        var bio = JSON.parse(localStorage.getItem('mybio'));
+        var interest = JSON.parse(localStorage.getItem('interests'));
+        if(name){
+            $("#myname").html(name);
+        }
+        if(bio){
+            console.log(bio);
+            $("#mybio").text(bio);
+        }
+
+        for (var i = 0; i < interest.length; i++){
+            // console.log(interest[i]);
+            if (interests[i] == "not"){
+                continue;
+            }
+            else{
+                console.log(interest[i]);
+                var inter = document.createTextNode(interest[i]);
+                $("#interests").append(inter);
+            }
+
+        }
+    })
+
+        </script>
+    </body>
+</html>

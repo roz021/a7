@@ -1,0 +1,13 @@
+.caldays {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  background-color: #E6E6E6;
+  padding: 5px;
+}
+.days {
+  background-color: #FFFFFF;
+  border: 5px solid #E6E6E6;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}

@@ -1,0 +1,47 @@
+#friendsall{
+  width:100%;
+  overflow:scroll;
+  background-color: #E6E6E6;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+.friends{
+  display:inline-block;
+  height:150px;
+  background-color: #FFFFFF;
+  border:5px solid #FFFFFF;;
+  text-align:center;
+  padding:10px;
+}
+
+#friendsall input{
+  width: 100px;
+  height: 100px;
+}
+
+#sfriendsall input{
+  width: 100px;
+  height: 100px;
+}
+.modal-body img{
+  width: 250px;
+  height: 250px;
+}
+.sfriendsall {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #E6E6E6;
+  padding: 10px;
+}
+.sfriends {
+  background-color: #FFFFFF;
+  border: 5px solid #E6E6E6;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.friendsbar{
+  padding-top: 50px;
+}

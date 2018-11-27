@@ -1,0 +1,230 @@
+body{
+    margin: 0px;
+}
+/* style so search and share are positioned correctly*/
+#searchshare{
+    
+    height: 100px;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+}
+/*align share button to center*/
+#share{
+    align-self: center;
+    
+}
+
+.search {
+    
+    padding-top: 5px
+
+}
+
+.search input{
+    width: 250px;
+    margin-left: 68px;
+
+}
+/*nav bar css*/
+footer{
+
+    background: linear-gradient(135deg,rgba(204,255,255,0.6), rgba(255,204,204,0.6));
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    text-align:center;
+}
+
+footer a{
+    display: inline-block;
+    /* background-color: blue; */
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer a:hover{
+    
+    -webkit-stroke-width: 5.3px;
+    -webkit-stroke-color: #FFFFFF;
+    -webkit-fill-color: #FFFFFF;
+    text-shadow: 1px 0px 20px yellow;background-color: (rgba(59, 255, 255, 0.9));
+}
+
+footer img{
+    width: 35px;
+    height: 35px;
+} 
+/*personal profile image top left*/
+#myProfile img{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top: 5px;
+    left: 8px;
+}
+
+#messages img{
+    position: fixed;
+    top: 3px;
+    right: 3px;
+}
+
+#logs h4{
+    position: fixed;
+    top: 3px;
+    right: 30px;
+}
+
+#newsfeed div{
+    position:relative;
+}
+
+#newsfeed h5{
+    position: relative;
+    display: inline;
+    padding-left: 10px;
+    top: -5px; 
+}
+
+#result h5{
+    position: relative;
+    display: inline;
+    padding-left: 10px;
+    top: -5px;
+}
+
+.liked {
+    background-color:red;
+}
+#arnold p{
+    font-size: 15px;
+    padding-left: 15px;
+}
+
+#pguo p{
+    font-size: 15px;
+    padding-left: 15px;
+}
+
+#ed p{
+    font-size: 15px;
+    padding-left: 15px;
+}
+
+#ed video{
+    display: block;
+    margin: 0 auto;
+}
+
+
+.arn2{
+    display: block;
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+#result .roy{
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+}
+
+#result .cl{
+    display: inline-block;
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    width: 25px;
+    height: 25px;
+}
+
+button {
+    background-color: white;
+}
+
+button #like:hover{
+    background-color: red;
+}
+
+button #comment:hover{
+    background-color: blue;
+}
+button img:visited{
+    background-color: rgb(255, 124, 124);
+}
+
+#newsfeed #profile{
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;  
+}
+
+
+#newsfeed button{
+    display: inline-block;
+}
+
+#newsfeed .likeb{
+    position: absolute;
+    left: 25%;
+}
+
+#newsfeed #comm{
+    position: absolute;
+    right: 25%;
+}
+#newsfeed #like{
+    position: absolute;
+    left: 25%;
+    bottom: 0;
+    width: 25px;
+    height: 25px;
+}
+
+#newsfeed #comment{
+    position: absolute;
+    right: 25%;
+    bottom: 0;
+    width: 25px;
+    height: 25px;
+}
+
+#result button{
+    display: inline-block;
+}
+
+#result .likeb{
+    position: absolute;
+    left: 25%;
+}
+
+#result #comm{
+    position: absolute;
+    right: 25%;
+}
+#result #like{
+    position: absolute;
+    left: 25%;
+    bottom: 0;
+    width: 25px;
+    height: 25px;
+}
+
+#result #comment{
+    position: absolute;
+    right: 25%;
+    bottom: 0;
+    width: 25px;
+    height: 25px;
+}

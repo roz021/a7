@@ -1,0 +1,104 @@
+<!doctype html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="../css/examplemessage.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/handlebars-v4.0.11.js"></script>
+    <script src="../js/medium.js"></script>
+
+    <title>Tyler the Creator</title>
+  </head>
+
+  <body>
+    <div id="back">
+        <button onclick="back()"> < </button>
+    </div>
+
+    <script>
+        function back() {
+          window.history.back();
+        }
+    </script>
+
+    <div class="container personInfo" id="pardiv">
+      <img src="../images/TylerTC.png" class="img-circle center-block" alt="Tyler TC" width="300" height="300">
+      <h2>Tyler the Creator</h2>
+    </div>
+
+    <!-- template for chat message -->
+    <script id="mychat-template" type="text/x-handlebars-template">
+      <div class="container">
+        <div class="pull-right">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h5> {{exMessage}} </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="pull-left">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h5> wassup </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+
+    <script>
+      var source = $("#mychat-template").html();
+      var template = Handlebars.compile(source);
+
+      var parentDiv = $("#pardiv");
+
+    // Shows past chats when page opens
+    $(document).ready(function(){
+      var count = JSON.parse(localStorage.getItem('chatNumttc'));
+      for(var i=1;i <= count;i++){
+        var past = JSON.parse(localStorage.getItem('myChatttc'+i));
+
+        var myMess = {'exMessage' : past};
+        var html = template(myMess);
+        parentDiv.append(html);
+      }
+    });
+
+    //sends chat and they respond with hey
+      function beamMeUp(){
+        var chatInput = $("#messagebar #exChat").val().trim();
+        var myMess = {'exMessage' : chatInput};
+        var html = template(myMess);
+        parentDiv.append(html);
+
+        //puts your message into localStorage
+        if(!localStorage.getItem('chatNumttc')){
+          localStorage.setItem("chatNumttc", JSON.stringify(0));
+        }
+        var count = JSON.parse(localStorage.getItem('chatNumttc'));
+        count++;
+        localStorage.setItem("chatNumttc", JSON.stringify(count));
+        var scount = JSON.stringify(count);
+
+        var inputName = document.getElementById("exChat").value;
+        localStorage.setItem("myChatttc"+scount, JSON.stringify((inputName)));
+      }
+    </script>
+
+
+    <div class="container" id="messagebar">
+      <input type="text" class="form-control" aria-describedby="comHelp" id="exChat" placeholder="Type a message...">
+      <button id="sendBtn" onclick="beamMeUp();">Send</button>
+    </div>
+
+
+
+  </body>
+</html>

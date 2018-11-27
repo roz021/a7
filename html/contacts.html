@@ -1,0 +1,363 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/contacts.css" rel="stylesheet" />
+    <link href="../css/home.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/handlebars-v4.0.11.js"></script>
+    <!-- <script src="../js/contacts.js"></script> -->
+    <title>Friends</title>
+</head>
+
+<script type="text/javascript">
+var friends = JSON.parse(localStorage.getItem("friends"));
+var sfriends = JSON.parse(localStorage.getItem("sfriends"));
+if(!Array.isArray(friends) || !Array.isArray(sfriends)){
+    console.log("empty objects");
+    var friends = [
+        { 'person': 'pguo', 'name': 'Phillip Guo', 'pic': 'pguo', 'bio': 'blah', 'profile': 'pguo', 'num': '10 Mutual Interests' },
+        { 'person': 'ed', 'name': 'Edwin Fu', 'pic': 'edwin', 'bio': 'blah', 'profile': 'edw', 'num': '9 Mutual Interests' },
+        { 'person': 'arn', 'name': 'Arnold S.', 'pic': 'arnolds', 'bio': 'blah', 'profile': 'arn', 'num': '10 Mutual Interests' },
+        { 'person': 'ty', 'name': 'Tyler the Creator', 'pic': 'TylerTC', 'bio': 'blah', 'profile': 'ttc', 'num': '11 Mutual Interests' }
+    ]
+    var sfriends = [
+        {
+            'person': 'bey', 'name': 'Beyonce Knowles', 'pic': 'Beyonce', 'bio': 'blah', 'profile': 'bey',
+            'num': '7 Mutual Interests'
+        },
+        {
+            'person': 'frank', 'name': 'Frank Ocean', 'pic': 'FOcean', 'bio': 'blah', 'profile': 'fo',
+            'num': '5 Mutual Interests'
+        },
+        {
+            'person': 'klay', 'name': 'Klay Thompson', 'pic': 'KThompson', 'bio': 'blah', 'profile': 'kt',
+            'num': '3 Mutual Interests'
+        },
+    ]
+    };
+    $(document).ready(function () {
+        localStorage.setItem('friends', JSON.stringify(friends));
+        localStorage.setItem('sfriends', JSON.stringify(sfriends));
+        //FOR THE PREVIEW
+        var source = $("#profs").html();
+        var template = Handlebars.compile(source);
+        var parentDiv = $("#friendsall");
+
+        for (var i = 0; i < friends.length; i++) {
+            var curData = friends[i];
+            var curHtml = template(curData);
+            parentDiv.append(curHtml);
+        }
+
+        // var sourcesug = $("#profs").html();
+        // var templatesug = Handlebars.compile(sourcesug);
+        var parentsugDiv = $("#sfriendsall");
+
+        for (var i = 0; i < sfriends.length; i++) {
+            var curData = sfriends[i];
+            var curHtml = template(curData);
+            parentsugDiv.append(curHtml);
+        }
+        //FOR THE MODAL
+        var sourceprev = $("#prof-prev-curr").html();
+        var templateprev = Handlebars.compile(sourceprev);
+        var parentprevDiv = $("#friendsall");
+
+        for (var i = 0; i < friends.length; i++) {
+            var curData = friends[i];
+            var curHtml = templateprev(curData);
+            parentprevDiv.append(curHtml);
+        }
+        var sourcePrevSug = $("#prof-prev-sug").html();
+        var templateSugPrev = Handlebars.compile(sourcePrevSug);
+        var parentSugDiv = $("#sfriendsall");
+
+        for (var i = 0; i < sfriends.length; i++) {
+            var curData = sfriends[i];
+            var curHtml = templateSugPrev(curData);
+            parentSugDiv.append(curHtml);
+        }
+    });
+
+
+    function remove(obj) {
+        var curr = JSON.parse(localStorage.getItem('friends'));
+        var sugg = JSON.parse(localStorage.getItem('sfriends'));
+        for (var i = 0; i < curr.length; i++) {
+            if (curr[i].name == obj) {
+                console.log("found " + obj + "at index" + i);
+                var temp = curr[i];
+                // var tempHtml = template(temp);
+                document.getElementById("friendsall").innerHTML = "";
+                document.getElementById("sfriendsall").innerHTML = "";
+                curr.splice(i, 1);
+                sugg.push(temp);
+                localStorage.setItem('friends', JSON.stringify(curr));
+                localStorage.setItem('sfriends', JSON.stringify(sugg));
+                var source = $("#profs").html();
+                var template = Handlebars.compile(source);
+                var parentDiv = $("#friendsall");
+
+                for (var i = 0; i < curr.length; i++) {
+                    var curData = curr[i];
+                    var curHtml = template(curData);
+                    parentDiv.append(curHtml);
+                }
+                var sourceprev = $("#prof-prev-curr").html();
+                var templateprev = Handlebars.compile(sourceprev);
+                var parentprevDiv = $("#friendsall");
+
+                for (var i = 0; i < curr.length; i++) {
+                    var curData = curr[i];
+                    var curHtml = templateprev(curData);
+                    parentprevDiv.append(curHtml);
+                }
+                var parentsugDiv = $("#sfriendsall");
+
+                for (var i = 0; i < sugg.length; i++) {
+                    var curData = sugg[i];
+                    var curHtml = template(curData);
+                    parentsugDiv.append(curHtml);
+                }
+                var sourcePrevSug = $("#prof-prev-sug").html();
+                var templateSugPrev = Handlebars.compile(sourcePrevSug);
+                var parentSugDiv = $("#sfriendsall");
+
+                for (var i = 0; i < sugg.length; i++) {
+                    var curData = sugg[i];
+                    var curHtml = templateSugPrev(curData);
+                    parentSugDiv.append(curHtml);
+                }
+
+            }
+        }
+    }
+    function add(obj){
+        var curr = JSON.parse(localStorage.getItem('friends'));
+        var sugg = JSON.parse(localStorage.getItem('sfriends'));
+        for (var i = 0; i < sugg.length; i++) {
+            if (sugg[i].name == obj) {
+                console.log("found " + obj + "at index" + i);
+                var temp = sugg[i];
+                // var tempHtml = template(temp);
+                document.getElementById("friendsall").innerHTML = "";
+                document.getElementById("sfriendsall").innerHTML = "";
+                sugg.splice(i, 1);
+                curr.push(temp);
+                localStorage.setItem('friends', JSON.stringify(curr));
+                localStorage.setItem('sfriends', JSON.stringify(sugg));
+                var source = $("#profs").html();
+                var template = Handlebars.compile(source);
+                var parentDiv = $("#friendsall");
+
+                for (var i = 0; i < curr.length; i++) {
+                    var curData = curr[i];
+                    var curHtml = template(curData);
+                    parentDiv.append(curHtml);
+                }
+                var sourceprev = $("#prof-prev-curr").html();
+                var templateprev = Handlebars.compile(sourceprev);
+                var parentprevDiv = $("#friendsall");
+
+                for (var i = 0; i < curr.length; i++) {
+                    var curData = curr[i];
+                    var curHtml = templateprev(curData);
+                    parentprevDiv.append(curHtml);
+                }
+                var parentsugDiv = $("#sfriendsall");
+
+                for (var i = 0; i < sugg.length; i++) {
+                    var curData = sugg[i];
+                    var curHtml = template(curData);
+                    parentsugDiv.append(curHtml);
+                }
+                var sourcePrevSug = $("#prof-prev-sug").html();
+                var templateSugPrev = Handlebars.compile(sourcePrevSug);
+                var parentSugDiv = $("#sfriendsall");
+
+                for (var i = 0; i < sugg.length; i++) {
+                    var curData = sugg[i];
+                    var curHtml = templateSugPrev(curData);
+                    parentSugDiv.append(curHtml);
+                }
+
+            }
+        }
+    }
+</script>
+
+<body>
+    <!-- <div class="search">
+                <input type="text" placeholder="Search.." name="search">
+    </div> -->
+    <footer>
+    
+        <a href="../home.html">
+            <img src="../images/home.png" alt="home">
+        </a>
+        
+
+        <a href="workout.html">
+            <img src="../images/workout.png" alt="workout">
+        </a>
+
+        <a href="contacts.html">
+            <img src="../images/friends.png" alt="friends">
+        </a>
+
+        <a href="caleandar.html">
+            <img src="../images/calendar.png" alt="calendar">
+        </a>
+
+        <a href="settings.html">
+            <img src="../images/settings.png" alt="settings">
+        </a>
+        
+    </footer>
+
+
+    <div id="messages">
+        <a href="messages.html">
+            <img src="../images/chat.png" alt="messages" style="width:50px;height:50px">
+        </a>
+    </div>
+
+
+
+    <div id="myProfile">
+        <a href="myProfile.html">
+            <img src="../images/profpic.jpg" alt="me">
+        </a>
+    </div>
+
+    <div class="friendsbar">
+        <h3>Your Fam!</h3>
+        <!--   <input type="text" placeholder="search fam" required>
+                  <button type="filter">filter</button> -->
+    </div>
+
+    <div id="friendsall">
+
+    </div>
+
+    <div class="suggestedbar">
+        <h3>Suggested</h3>
+        <!-- <input type="text" placeholder="search friend" required>
+                  <button type="filter">filter</button> -->
+    </div>
+
+    <div id="sfriendsall">
+
+    </div>
+
+    <!-- FOR CURRENT FRIENDS -->
+    <script id="prof-prev-curr" type="text/x-handlebars-template">
+
+               <div class="modal fade" id="{{person}}Modal">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+
+                          <div class="modal-header">
+                              <h5 id="name" class="modal-title">{{name}}</h5>
+                              <button type="button" class="close" data-dismiss="modal">&times;
+                              </button>
+                          </div>
+
+                          <div class="modal-body">
+                            <img src="../images/{{pic}}.png">
+                              <div class="form-group">
+                                  <label for="examplePost"></label>
+                                  <p id="examplePost">{{bio}}</p>
+                              <!--    <input type="text" class="form-control" id="examplePost"
+                                  aria-describedby="postHelp" placeholder="Share something">
+                              -->
+                              </div>
+                          </div>
+
+                          <div class="modal-footer">
+                            <a href="fake/{{profile}}.html">
+                              <button type="button" class="btn btn-danger" id="buttonPost">
+                                  More
+                              </button>
+                              </a>
+                            <a href="caleandar.html">
+                              <button type="button" class="btn btn-danger" id="buttonPlan">
+                                Schedule
+                              </button>
+                            </a>
+                            <button type="button" value="{{name}}" class="btn btn-danger" id="buttonRemove" data-dismiss="modal" onclick="remove(value)">
+                              Remove Friend
+                            </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+             </script>
+
+    <!-- FOR SUGGESTED FRIENDS -->
+    <script id="prof-prev-sug" type="text/x-handlebars-template">
+
+              <div class="modal fade" id="{{person}}Modal">
+                 <div class="modal-dialog">
+                     <div class="modal-content">
+
+                         <div class="modal-header">
+                             <h5 class="modal-title">{{name}}</h5>
+                             <button type="button" class="close" data-dismiss="modal">&times;
+                             </button>
+                         </div>
+
+                         <div class="modal-body">
+                           <img src="../images/{{pic}}.png">
+                             <div class="form-group">
+                                 <label for="examplePost"></label>
+                                 <p id="examplePost">{{bio}}</p>
+                             <!--    <input type="text" class="form-control" id="examplePost"
+                                 aria-describedby="postHelp" placeholder="Share something">
+                             -->
+                             </div>
+                         </div>
+
+                         <div class="modal-footer">
+                           <a href="fake/{{profile}}.html">
+                             <button type="button" class="btn btn-danger" id="buttonPost">
+                                 More
+                             </button>
+                             </a>
+                           <a href="caleandar.html">
+                             <button type="button" class="btn btn-danger" id="buttonPlan">
+                               Schedule
+                             </button>
+                           </a>
+                           <button type="button" value="{{name}}" class="btn btn-danger" id="buttonAdd" data-dismiss="modal" onclick="add(value)">
+                             Add Friend
+                           </button>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+            </script>
+
+    <script id="profs" type="text/x-handlebars-template">
+              <div class="friends" id="{{name}}">
+                <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"> -->
+                    <input type="image" src="../images/{{pic}}.png" name="saveForm" class="btn btn-primary"
+                    id="picturePrev" data-toggle="modal" data-target="#{{person}}Modal" />
+                    <a href="fake/{{profile}}.html">
+                    <h4>{{name}}</h4>
+                    <h5>{{num}}</h5>
+                    </a>
+              </div>
+            </script>
+</body>
+
+</html>

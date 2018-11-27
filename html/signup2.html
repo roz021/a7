@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled/minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- jQuery Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- <link rel="shortcut icon" href=""> -->
+  <!-- <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">  -->
+  <!-- My Own CSS -->
+  <link rel="stylesheet" href="../css/signup.css">
+  <script src="../js/signup2.js"></script>
+
+  </head>
+
+  <!-- <script type="text/javascript">
+    $(document).ready(function(){
+    console.log("initializing page");
+    var setname = localStorage.getItem('name');
+    if(setname){
+        $("#myName").html(setname);
+    }
+
+    $('#profbio').click(function(){
+    console.log("storing");
+    var inputBio = document.getElementById('bio').value;
+    console.log(inputBio);
+    localStorage.setItem('mybio', JSON.stringify(inputBio));
+    var bio = JSON.parse(localStorage.getItem('mybio'));
+        console.log(bio);
+        location.href="signup3.html";
+    });
+
+    });
+</script> -->
+  <body>
+    <div class="jumbotron">
+        <h1 align="center">Welcome</h1>
+        <h1 align="center" id="myName">[NAME]</h1>
+
+        <p align="center">Tell us about yourself!</p>
+    </div>
+
+    <form class="form-horizontal">
+        <div class="container">
+            <label for="bio"><b>Bio</b></label>
+            <textarea class="form-control" rows="10" id="bio"></textarea>
+        </div>
+        </form>
+    <div class="container">
+        <label for="image-upload">Select an image:</label><br/>
+        <input id="inp" type='file'>
+        <p id="b64"></p>
+        <img id="img" height="150">
+        <button type="button" id="profbio">Next</button>
+        </div>
+
+  </body>
+  </html>

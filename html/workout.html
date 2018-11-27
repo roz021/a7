@@ -1,0 +1,81 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>Workout</title>
+        <link href="../css/home.css" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="../css/workout.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <footer>
+
+                    <a href="../home.html">
+                        <img src="../images/home.png" alt="home" >
+                    </a>
+
+
+
+                    <a href="workout.html">
+                        <img src="../images/workout.png" alt="workout" >
+                    </a>
+
+
+
+                    <a href="contacts.html">
+                        <img src="../images/friends.png" alt="friends">
+                    </a>
+
+
+
+                    <a href="caleandar.html">
+                        <img src="../images/calendar.png" alt="calendar" >
+                    </a>
+
+
+
+                    <a href="settings.html">
+                        <img src="../images/settings.png" alt="settings">
+                    </a>
+
+            </footer>
+
+            <div id="messages">
+                <a href="messages.html">
+                    <img src="../images/chat.png" alt="messages" style="width:50px;height:50px">
+                </a>
+            </div>
+
+        <div id="myProfile">
+            <a href="myProfile.html">
+                <img src="../images/profpic.jpg" alt="me">
+            </a>
+        </div>
+
+        <script id="entry-template" type="text/x-handlebars=template">
+        <div class="days" id="day{{dayindex}}">
+            <a href="Exercises/{{dayindex}}.html">
+            <p>{{dayindex}}</p>
+            </a>
+        </div>
+          </script>
+
+            <!-- <div class="calmonth" >
+              <h3> November </h3>
+            </div> -->
+
+          <div class="container">
+            <div class="caldays" id="calen">
+            </div>
+          </div>
+
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/handlebars-v4.0.11.js"></script>
+        <script src="../js/workout.js"></script>
+    </body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>Messages</title>
+        <link href="../css/messages.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/handlebars-v4.0.11.js"></script>
+        <script src="https://code.jquery.com/jquery.js"></script>
+    </head>
+
+    <body>
+        <div id="back">
+            <button onclick="back()"><</button>
+        </div>
+
+        <script>
+                function back() {
+                    window.history.back();
+                }
+                </script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+            
+            var name = localStorage.getItem("name");
+            if (name){
+                console.log("changing name");
+                console.log(name);
+                $("#name").html(name);
+            }
+                        var dataImage = localStorage.getItem('profileimg');
+            meImg = document.getElementById('profilepic');
+            meImg.setAttribute('src', dataImage);
+              var source = $("#newmess-template").html();
+              var template = Handlebars.compile(source);
+
+              var parentDiv = $("#bey");
+            });
+        </script>
+
+        <div class=container id="myself">
+            <a href="myProfile.html">
+             <h2 id="name"> Roy Zhang </h2>
+            <img id="profilepic" src="../images/profpic.jpg" alt="me">
+            </a>
+        </div>
+
+        <div id="add">
+            <a href="newMsg.html">
+            <h2> + </h2>
+            </a>
+        </div>
+
+        <script id="newmess-template" type="text/x-handlebars-template">
+          <div class="container history" id="{{personName}}">
+              <a href="{{htmlname}}.html">
+                  <img src="../images/{{pic}}" alt="{{personName}}">
+                  <p>{{fullname}}</p>
+              </a>
+          </div>
+        </script>
+
+
+        <div class="container history" id="bey">
+            <a href="examplechat1.html">
+                <img src="../images/Beyonce.jpg" alt="bey">
+                <p>Beyonce Carter-Knowles</p>
+            </a>
+        </div>
+
+        <div class="container history" id="edwin">
+            <a href="examplechat2.html">
+            <img src="../images/edwin.jpg" alt="ed">
+            <p>Edwin Fu</p>
+            </a>
+        </div>
+
+        <div class="container history" id="pguo">
+            <a href="examplechat3.html">
+                <img src="../images/pguo.png" alt="pguo">
+                <p>Philip Guo</p>
+            </a>
+        </div>
+    </body>
+</html>
