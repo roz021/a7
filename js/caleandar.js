@@ -11,13 +11,13 @@ function CalendarApp(date) {
    else{
      console.log("THERE WERE NO EVENTS");
      this.apts = [
-       {
-         name: 'example',
-         endTime: new Date(2018, 10, 10, 10),
-         startTime: new Date(2018, 10, 10, 10),
-         day: new Date(2018, 10, 10).toString()
-       }
-     ]
+     {name: 'example',
+    endTime: new Date(2000, 1, 1, 1),
+    startTime: new Date(2000, 1, 1, 1),
+    day: new Date(2000, 1, 1).toString()
+     }
+    ]
+      
    }
    var saveDates = JSON.parse(localStorage.getItem('eventDates'));
    if (saveDates){
@@ -27,7 +27,7 @@ function CalendarApp(date) {
    }
    else{
      console.log("THERE WERE NO EVENT DATES");
-     this.aptDates = [new Date(2018, 10, 10).toString()];
+     this.aptDates = [new Date(2000, 1, 1).toString()];
    }
   this.days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   this.months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -58,7 +58,7 @@ function CalendarApp(date) {
   this.calendarMonthLastDiv = document.getElementById("calendar-month-last");
   this.calendarMonthNextDiv = document.getElementById("calendar-month-next");
   
-  this.dayInspirationalQuote = document.getElementById("inspirational-quote");
+  // this.dayInspirationalQduote = document.getElementById("inspirational-quote");
    
   this.todayIsSpan = document.getElementById("footer-date");
   // this.eventsCountSpan = document.getElementById("footer-events");
@@ -442,6 +442,7 @@ CalendarApp.prototype.inputChangeLimiter = function(ele) {
   var limiter = CalendarApp.prototype.textOptionLimiter;
 
   var _options = ele.getAttribute("data-options").split(",");
+  // var _options = 'text';
   var _format = ele.getAttribute("data-format") || 'text';
   timeOut = setTimeout(function(){
     ele.value = limiter(_options, ele.value, _format);
