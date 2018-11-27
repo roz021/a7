@@ -36,7 +36,9 @@
             for(var i=1;i <= count;i++){
               var past = JSON.parse(localStorage.getItem('myPost'+i));
 
-              var myPost = {'poststring' : past};
+              var myPost = {'poststring' : past,
+                            'name' : myName,
+                        'mypic' : dataImage};
               var html = template(myPost);
             //  console.log(html);
               parentDiv.prepend(html);
@@ -46,7 +48,9 @@
             $('#buttonPost').click(function(){
                 var dataPost = $("#myModal #examplePost").val().trim();
 
-                var myPost = {'poststring' : dataPost};
+                var myPost = {'poststring' : dataPost,
+                                'name' : myName,
+                                'mypic' : dataImage};
                 var html = template(myPost);
                 console.log(html);
                 parentDiv.prepend(html);
@@ -231,8 +235,8 @@
               <div class="container newsfeed" id="post">
                 <div class="panel panel-default">
                   <div class="panel-body">
-                    <img src="images/profpic.jpg" class="roy" alt="roy">
-                    <h5>Roy Zhang</h5>
+                    <img src="{{mypic}}" class="roy" alt="roy">
+                    <h5>{{name}}</h5>
                       <p>{{poststring}}</p>
                         <!-- <button class="likeb">
                         <img id="like" src="images/heart.png" alt="like">

@@ -4,8 +4,15 @@
     <head>
         <title>Routines</title>
         <link href="../../css/home.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery.js"></script>
     </head>
-
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var dataImage = localStorage.getItem('profileimg');
+                meImg = document.getElementById('me');
+                meImg.setAttribute('src', dataImage);
+        })
+        </script>
     <body>
       <footer>
 
@@ -53,7 +60,7 @@
 
       <div id="myProfile">
           <a href="../myProfile.html">
-              <img src="../../images/profpic.jpg" alt="me">
+              <img src="../../images/profpic.jpg" alt="me" id="me">
           </a>
       </div>
 
