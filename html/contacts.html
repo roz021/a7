@@ -239,13 +239,14 @@ if(!Array.isArray(friends) || !Array.isArray(sfriends)){
         </a>
     </div>
 
-    <div class="friendsbar">
+<div>
+    <div class="friendsbar" data-toggle="collapse" data-target="#friendsall">
         <h3>Your Fam!</h3>
         <!--   <input type="text" placeholder="search fam" required>
                   <button type="filter">filter</button> -->
     </div>
 
-    <div id="friendsall">
+    <div id="friendsall" class="collapse in">
 
     </div>
 
@@ -285,13 +286,13 @@ if(!Array.isArray(friends) || !Array.isArray(sfriends)){
 
                           <div class="modal-footer">
                             <a href="fake/{{profile}}.html">
-                              <button type="button" class="btn btn-danger" id="buttonPost">
-                                  More
+                              <button type="button" class="btn btn-primary" id="buttonPost">
+                                  See Profile
                               </button>
                               </a>
                             <a href="caleandar.html">
-                              <button type="button" class="btn btn-danger" id="buttonPlan">
-                                Schedule
+                              <button type="button" class="btn btn-primary" id="buttonPlan">
+                                Schedule Workout
                               </button>
                             </a>
                             <button type="button" value="{{name}}" class="btn btn-danger" id="buttonRemove" data-dismiss="modal" onclick="remove(value)">
@@ -329,16 +330,16 @@ if(!Array.isArray(friends) || !Array.isArray(sfriends)){
 
                          <div class="modal-footer">
                            <a href="fake/{{profile}}.html">
-                             <button type="button" class="btn btn-danger" id="buttonPost">
-                                 More
+                             <button type="button" class="btn btn-primary" id="buttonPost">
+                              See Profile
                              </button>
                              </a>
                            <a href="caleandar.html">
-                             <button type="button" class="btn btn-danger" id="buttonPlan">
-                               Schedule
+                             <button type="button" class="btn btn-primary" id="buttonPlan">
+                              Schedule Workout
                              </button>
                            </a>
-                           <button type="button" value="{{name}}" class="btn btn-danger" id="buttonAdd" data-dismiss="modal" onclick="add(value)">
+                           <button type="button" value="{{name}}" class="btn btn-success" id="buttonAdd" data-dismiss="modal" onclick="add(value)">
                              Add Friend
                            </button>
                          </div>
@@ -350,12 +351,12 @@ if(!Array.isArray(friends) || !Array.isArray(sfriends)){
     <script id="profs" type="text/x-handlebars-template">
               <div class="friends" id="{{name}}">
                 <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"> -->
-                    <input type="image" src="../images/{{pic}}.png" name="saveForm" class="btn btn-primary"
+                    <input type="image" src="../images/{{pic}}.png" name="saveForm"
                     id="picturePrev" data-toggle="modal" data-target="#{{person}}Modal" />
-                    <a href="fake/{{profile}}.html">
-                    <h4>{{name}}</h4>
-                    <h5>{{num}}</h5>
-                    </a>
+                    <!-- <a href="fake/{{profile}}.html"> -->
+                    <h4 data-toggle="modal" data-target="#{{person}}Modal">{{name}}</h4>
+                    <h5 data-toggle="modal" data-target="#{{person}}Modal">{{num}}</h5>
+                    <!-- </a> -->
               </div>
             </script>
 </body>
