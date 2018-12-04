@@ -1,0 +1,64 @@
+@font-face{
+    font-family: SFUI;
+    src: url(../SFUI.ttf);
+}
+@font-face{
+    font-family: SFH;
+    src: url(../SFH.otf);
+}
+@font-face{
+    font-family: SFSB;
+    src: url(../SFSB.otf);
+}
+
+html, body{
+    height:100%;
+    background: linear-gradient(0deg, #9AFFFB, #67cef6);
+    background-repeat: no-repeat;
+    margin: 0;
+}
+#topLogo{
+    font-family: SFUI;
+    font-size: 105px;
+    text-align: center;
+}
+
+label{
+    font-family: SFSB;
+    font-size: 19px;
+}
+
+#login{
+    position: fixed;
+    top: 35%;
+}
+#username, #pwd{
+    width: 351px;
+}
+
+#loginWrapper{
+    text-align: center;
+}
+
+#loginbtn{
+    font-family: SFSB;
+    font-size: 19px;
+    display: inline-block;
+    width: 142px;
+}
+
+#signup{
+    position: fixed;
+    bottom: 0;
+    left: 55px;
+}
+
+#signupbtn{
+    font-family: SFH;
+    font-size: 25px;
+    color: black;
+}
+h2{
+    font-family:SFSB;
+    font-size: 25px;
+}

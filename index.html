@@ -3,6 +3,7 @@
 <html="en">
     <head>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/index.css">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://code.jquery.com/jquery.js"></script>
@@ -14,9 +15,10 @@
 
     <body>
       <div class="container" id="signin">
-        <h1>FITFAM</h1>
+        <h1 id="topLogo">FitFam</h1>
       </div>
-          <div class="container login">
+      <div id="loginWrapper">
+          <div class="container" id="login">
             <form action="/action_page.php">
               <div class="form-group">
                 <label for="username">Username:</label>
@@ -26,18 +28,17 @@
                 <label for="pwd">Password:</label>
                 <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
               </div>
-              <!-- how to make the mouse into a hand/responsive -->
+              <div id="loginWrapper">
               <a href="home.html">
-              <button type="button" class="btn btn-default">Submit</button>
+              <button type="button" id="loginbtn" class="btn btn-default">Login</button>
               </a>
+            
             </form>
           </div>
+        </div>
       <div class="container" id="signup">
-        <h2>Don't have an account? <strong>Sign Up!</strong></h2>
-        <a href="html/signup.html">
-        <button type="button" class="btn btn-default">Sign Up
-        </button>
-      </a>
+        <h2>Don't have an account?</h2> 
+        <a href="html/signup.html"><h2 id="signupbtn">Sign Up!</h2></a>
       </div>
     </body>
 </html>
