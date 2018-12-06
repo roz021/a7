@@ -1,3 +1,21 @@
+@font-face{
+    font-family: newgothic;
+    src: url(../News\ Gothic\ Condensed\ Bold.otf);
+  }
+  
+  @font-face{
+    font-family: SFUI;
+    src: url(../SFUI.ttf);
+  }
+  @font-face{
+    font-family: SFH;
+    src: url(../SFH.otf);
+  }
+  @font-face{
+    font-family: SFSB;
+    src: url(../SFSB.otf);
+  }
+  
 body{
     margin: 0px;
 }
@@ -15,21 +33,29 @@ body{
 
 }
 
-.search {
-
-    padding-top: 5px
-
+.button{
+    width: 153px;
+    height: 51px;
 }
 
-.search input{
-    width: 250px;
-    margin-left: 68px;
+.button1{
+    font-family: newgothic;
+    font-size: 20px;
+    background-color: white;
+    border: 2px solid #67CEF6;
+    color:#67CEF6;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
 
+.panel-body{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
 }
 /*nav bar css*/
 footer{
 
-    background: linear-gradient(135deg,rgba(204,255,255,0.6), rgba(255,204,204,0.6));
+    /* background: linear-gradient(180deg,rgba(103,206,246,0.8), rgba(0,131,183,0.8)); */
+    background: white;
+    border-top: 2px solid #67CEF6;
     overflow: hidden;
     position: fixed;
     bottom: 0;
@@ -48,7 +74,8 @@ footer a{
     margin-right: auto;
 }
 footer a.active-page{
-    background-color: rgb(255,204,204);
+    /* background-color: rgb(173,232,255); */
+    background: linear-gradient(180deg,rgba(103,206,246,0.5), rgba(0,131,183,0.5));
 }
 
 footer img{
@@ -58,25 +85,32 @@ footer img{
 /*personal profile image top left*/
 #myProfile img{
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     position: fixed;
     top: 5px;
+    z-index:1;
     left: 8px;
+    border: 2px solid #67CEF6;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 #messages img{
     position: fixed;
     top: 3px;
+    z-index:1;
     right: 3px;
 }
 
-#logs h4{
-    position: fixed;
-    top: 3px;
-    right: 30px;
+
+#pguo h5, #ed h5, #arnold h5, #result h5{
+    font-family:newgothic;
+    text-transform: uppercase;
 }
 
+#pguo p, #ed p, #arnold p, #result p{
+    font-family: SFSB;
+}
 #newsfeed div{
     position:relative;
 }
@@ -95,9 +129,7 @@ footer img{
     top: -5px;
 }
 
-.liked {
-    background-color:red;
-}
+
 #arnold p{
     font-size: 15px;
     padding-left: 50px;
@@ -148,7 +180,7 @@ footer img{
     height: 25px;
 }
 
-button {
+/* button {
     background-color: white;
 }
 
@@ -161,7 +193,7 @@ button #comment:hover{
 }
 button img:visited{
     background-color: rgb(255, 124, 124);
-}
+} */
 
 #newsfeed #profile{
     border-radius: 50%;
@@ -204,22 +236,12 @@ button img:visited{
     display: inline-block;
 }
 
-#result .likeb{
-    position: absolute;
-    left: 25%;
-}
 
 #result #comm{
     position: absolute;
     right: 25%;
 }
-#result #like{
-    position: absolute;
-    left: 25%;
-    bottom: 0;
-    width: 25px;
-    height: 25px;
-}
+
 
 #result #comment{
     position: absolute;
