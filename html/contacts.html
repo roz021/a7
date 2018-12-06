@@ -45,6 +45,9 @@ if(!Array.isArray(friends) || !Array.isArray(sfriends)){
     ]
     };
     $(document).ready(function () {
+        var dataImage = localStorage.getItem('profileimg');
+            meImg = document.getElementById('profilepic');
+            meImg.setAttribute('src', dataImage);
         localStorage.setItem('friends', JSON.stringify(friends));
         localStorage.setItem('sfriends', JSON.stringify(sfriends));
         //FOR THE PREVIEW
@@ -235,12 +238,12 @@ if(!Array.isArray(friends) || !Array.isArray(sfriends)){
 
     <div id="myProfile">
         <a href="myProfile.html">
-            <img src="../images/profpic.jpg" alt="me">
+            <img id="profilepic" src="../images/profpic.jpg" alt="me">
         </a>
     </div>
 
 <div>
-    <div class="friendsbar" data-toggle="collapse" data-target="#friendsall">
+    <div class="container" id="friendsbar" data-toggle="collapse" data-target="#friendsall">
         <h3>Your Fam!</h3>
         <!--   <input type="text" placeholder="search fam" required>
                   <button type="filter">filter</button> -->
@@ -250,7 +253,7 @@ if(!Array.isArray(friends) || !Array.isArray(sfriends)){
 
     </div>
 
-    <div class="suggestedbar">
+    <div class="container" id="suggestedbar">
         <h3>Suggested</h3>
         <!-- <input type="text" placeholder="search friend" required>
                   <button type="filter">filter</button> -->
@@ -274,7 +277,7 @@ if(!Array.isArray(friends) || !Array.isArray(sfriends)){
                           </div>
 
                           <div class="modal-body">
-                            <img src="../images/{{pic}}.png">
+                            <img id="propic2" src="../images/{{pic}}.png">
                               <div class="form-group">
                                   <label for="examplePost"></label>
                                   <p id="examplePost">{{bio}}</p>
@@ -318,7 +321,7 @@ if(!Array.isArray(friends) || !Array.isArray(sfriends)){
                          </div>
 
                          <div class="modal-body">
-                           <img src="../images/{{pic}}.png">
+                           <img id="propic2" src="../images/{{pic}}.png">
                              <div class="form-group">
                                  <label for="examplePost"></label>
                                  <p id="examplePost">{{bio}}</p>
@@ -351,7 +354,7 @@ if(!Array.isArray(friends) || !Array.isArray(sfriends)){
     <script id="profs" type="text/x-handlebars-template">
               <div class="friends" id="{{name}}">
                 <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"> -->
-                    <input type="image" src="../images/{{pic}}.png" name="saveForm"
+                    <input id="propic" type="image" src="../images/{{pic}}.png" name="saveForm"
                     id="picturePrev" data-toggle="modal" data-target="#{{person}}Modal" />
                     <!-- <a href="fake/{{profile}}.html"> -->
                     <h4 data-toggle="modal" data-target="#{{person}}Modal">{{name}}</h4>

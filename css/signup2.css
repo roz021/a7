@@ -1,0 +1,58 @@
+@font-face{
+    font-family: SFUI;
+    src: url(../SFUI.ttf);
+  }
+  @font-face{
+    font-family: SFH;
+    src: url(../SFH.otf);
+  }
+  @font-face{
+    font-family: SFSB;
+    src: url(../SFSB.otf);
+  }
+  @font-face{
+    font-family: newgothic;
+    src: url(../News\ Gothic\ Condensed\ Bold.otf);
+  }
+  
+h1, p{
+  font-family: newgothic;
+  color: #67CEF6
+}
+
+h1{
+  font-size: 50px;
+}
+
+p{
+  font-size: 25px;
+}
+
+.form-control{
+  background-color: lightgray;
+}
+  button {
+    background-color: #67CEF6;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    font-family: SFH;
+    
+  }
+
+  button:hover {
+    opacity:1;
+  }
+
+  label{
+    font-family: SFSB;
+    font-size: 19px;
+  }
+
+  #upload{
+      padding-top: 30px;
+  }

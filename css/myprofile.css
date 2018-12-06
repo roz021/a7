@@ -1,3 +1,63 @@
+@font-face{
+    font-family: newgothic;
+    src: url(../News\ Gothic\ Condensed\ Bold.otf);
+}
+
+@font-face{
+    font-family: SFSB;
+    src: url(../SFSB.otf);
+}
+
+
 #profilePic{
     padding-top: 35px;
+}
+
+#me2{
+    border: 5px solid #67CEF6;
+}
+
+#profilecon{
+  padding-top: 50px;
+}
+
+#myname{
+  font-family: newgothic;
+  text-transform: uppercase;
+}
+
+#mybio{
+  font-family: SFSB;
+}
+
+#row{
+  text-align: center;
+}
+
+#intblock{
+  font-family: SFSB;
+  display: inline-block;
+}
+
+#interest{
+  font-family: newgothic;
+  padding-left:30px;
+}
+
+#pictures{
+  font-family: newgothic;
+  padding-left:30px;
+}
+
+#workout{
+  position: fixed;
+  top: 8px;
+  z-index:1;
+  right: 3px;
+}
+
+#workoutbut{
+  font-family: newgothic;
+  color:#FFFFFF;
+  background-color: #67CEF6;
 }

@@ -1,5 +1,10 @@
 * {box-sizing: border-box}
 @font-face{
+  font-family: newgothic;
+  src: url(../News\ Gothic\ Condensed\ Bold.otf);
+}
+
+@font-face{
   font-family: SFUI;
   src: url(../SFUI.ttf);
 }
@@ -12,23 +17,20 @@
   src: url(../SFSB.otf);
 }
 
-html, body{
-  height:100%;
-  background: linear-gradient(0deg, #9AFFFB, #67cef6);
-  background-repeat: no-repeat;
-  margin: 0;
+#header{
+  margin: auto;
+  width: 40%;
 }
-
-#ff{
-  font-family: SFUI;
-  font-size: 105px;
-  text-align: center;
+#logo{
+  width: 136px;
+  height: 129px;
 }
 
 #find{
-  font-family: SFSB;
+  font-family: newgothic;
   font-size: 20px;
   text-align: center;
+  color: #67CEF6
 }
 
 label{
@@ -53,7 +55,7 @@ input[type=text]:focus, input[type=password]:focus input[type="email"]:focus{
 
 /* Set a style for all buttons */
 button {
-  background-color: #4CAF50;
+  background-color: #67cef6;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
