@@ -2,6 +2,9 @@ function CalendarApp(date) {
   if (!(date instanceof Date)) {
     date = new Date();
   }
+  var dataImage = localStorage.getItem('profileimg');
+            meImg = document.getElementById('profilepic');
+            meImg.setAttribute('src', dataImage);
    var saveEvents = JSON.parse(localStorage.getItem('events'));
    if (saveEvents){
      console.log("THERE WERE EVENTS");
