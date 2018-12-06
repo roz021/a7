@@ -26,25 +26,27 @@
     </script>
 
     <div class="container personInfo" id="pardiv">
+      <a href="fake/bey.html">
       <img src="../images/Beyonce.jpg" class="img-circle center-block" alt="Beyonce" width="300" height="300">
       <h2>Beyonce Knowles-Carter</h2>
+      </a>
     </div>
 
     <!-- template for chat message -->
     <script id="mychat-template" type="text/x-handlebars-template">
-      <div class="container">
+      <div id="msg" class="container">
         <div class="pull-right">
           <div class="panel panel-default">
-            <div class="panel-body">
+            <div id="mymsg" class="panel-body">
               <h5> {{exMessage}} </h5>
             </div>
           </div>
         </div>
       </div>
-      <div class="container">
+      <div id="msg" class="container">
         <div class="pull-left">
           <div class="panel panel-default">
-            <div class="panel-body">
+            <div id="yourmsg" class="panel-body">
               <h5> hey </h5>
             </div>
           </div>

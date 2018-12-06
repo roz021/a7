@@ -1,7 +1,49 @@
-.rmess{
-  background-color: #E6E6E6;
+@font-face{
+  font-family: newgothic;
+  src: url(../News\ Gothic\ Condensed\ Bold.otf);
 }
 
-.bmess{
-  background-color: #FFFFFF;
+@font-face{
+  font-family: SFUI;
+  src: url(../SFUI.ttf);
+}
+@font-face{
+  font-family: SFH;
+  src: url(../SFH.otf);
+}
+@font-face{
+  font-family: SFSB;
+  src: url(../SFSB.otf);
+}
+
+h2{
+  font-family: newgothic;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#mymsg{
+  background-color: #67CEF6;
+}
+
+#yourmsg{
+  background-color: lightgray;
+}
+
+#msg{
+  border-radius: 20%;
+}
+img{
+  border: 2px solid #67CEF6;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#sendBtn{
+  top: 10px;
+  font-family: newgothic;
+  font-size: 20px;
+  background-color: white;
+  border: 2px solid #67CEF6;
+  color:#67CEF6;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
