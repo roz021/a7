@@ -1,9 +1,33 @@
+@font-face{
+    font-family: newgothic;
+    src: url(../News\ Gothic\ Condensed\ Bold.otf);
+}
+
+@font-face{
+    font-family: SFSB;
+    src: url(../SFSB.otf);
+}
+
+
 #profilePic{
     padding-top: 35px;
 }
 
+#me{
+    border: 5px solid #67CEF6;
+}
+
 #profilecon{
   padding-top: 50px;
+}
+
+#myname{
+  font-family: newgothic;
+  text-transform: uppercase;
+}
+
+#mybio{
+  font-family: SFSB;
 }
 
 #row{
@@ -11,9 +35,11 @@
 }
 
 #intblock{
+  font-family: SFSB;
   display: inline-block;
 }
 
 #interest{
+  font-family: newgothic;
   padding-left:30px;
 }
