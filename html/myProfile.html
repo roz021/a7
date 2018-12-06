@@ -5,6 +5,7 @@
         <title>Me</title>
         <link href="../css/home.css" rel="stylesheet">
         <link href="../css/myprofile.css" rel="stylesheet">
+        <script src="../js/handlebars-v4.0.11.js"></script>
           <!-- Latest compiled/minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!-- jQuery Library -->
@@ -58,26 +59,46 @@
                 </a>
             </div>
 
-        <!-- <div id="logs">
-            <a href="logs.html">
-                <h4>Logs</h4>
-            </a>
-        </div> -->
-
         <div id="myProfile">
             <a href="myProfile.html">
                 <img id="me" src="../images/profpic.jpg" alt="me">
             </a>
         </div>
 
-        <div id="profilePic">
-            <!-- <img src="../images/profpic.jpg" alt="Profile Photo" style="width:250px;height:300px"> -->
-            <h1 id="myname"></h1>
-            <h3>BIO</h3>
-            <p id="mybio"></p>
-            <h3>INTERESTS</h3>
-            <p id="interests"></p>
-        </div>
+        <div class="container" id="profilecon">
+          <div class="panel panel-default">
+            <div id="profilePic">
+                <img class="img-circle center-block" id="me" src="../images/profpic.jpg" alt="me" width="300" height="300">
+                <h1 class="text-center" id="myname"></h1>
+                <!-- <h3>BIO</h3> -->
+                <p class="text-center"id="mybio"></p>
+                <br>
+              </div>
+            </div>
+          </div>
+          <h3 id="interest">Interests:</h3>
+          <div id="row">
+
+          </div>
+          <br>
+          <br>
+          <br>
+
+                <script id="interests-template" type="text/x-handlebars-template">
+                  <div class="container" id='intblock'>
+                      <div class="panel panel-default">
+                        <div class="panel-body">
+                          <h5> {{exMessage}} </h5>
+                        </div>
+                      </div>
+                  </div>
+                </script>
+
+                <script>
+
+                </script>
+                <!-- <p id="interests"></p> -->
+
 
         <script type="text/javascript">
         $(document).ready(function(){
@@ -88,24 +109,28 @@
             $("#myname").html(name);
         }
         if(bio){
-            console.log(bio);
+            // console.log(bio);
             $("#mybio").text(bio);
         }
 
-        for (var i = 0; i < interest.length; i++){
-            // console.log(interest[i]);
-            if (interests[i] == "not"){
-                continue;
-            }
-            else{
-                console.log(interest[i]);
-                var inter = document.createTextNode(interest[i]);
-                $("#interests").append(inter);
-            }
+        var source = $("#interests-template").html();
+        var template = Handlebars.compile(source);
 
+        var parentDiv = $("#row");
+
+        var interest = JSON.parse(localStorage.getItem('interests'));
+        for(var i=0;i < interest.length;i++){
+          // console.log(interest[i])
+          if(interest[i]!== null){
+            console.log(interest[i]);
+            var myMess = {'exMessage' : interest[i]};
+            var html = template(myMess);
+            parentDiv.append(html);
+          }
         }
-    })
+        })
 
-        </script>
+          </script>
+
     </body>
 </html>
