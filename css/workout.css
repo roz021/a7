@@ -1,13 +1,41 @@
+@font-face{
+    font-family: newgothic;
+    src: url(../News\ Gothic\ Condensed\ Bold.otf);
+}
+
+@font-face{
+    font-family: SFSB;
+    src: url(../SFSB.otf);
+}
+
+#calen2{
+  padding-top: 60px;
+}
 .caldays {
   display: grid;
   grid-template-columns: auto auto auto;
   background-color: #E6E6E6;
   padding: 5px;
 }
+
 .days {
+  font-family: newgothic;
+  text-transform: uppercase;
   background-color: #FFFFFF;
   border: 5px solid #E6E6E6;
   padding: 10px;
   font-size: 30px;
   text-align: center;
+}
+
+#exercises{
+  padding-top: 60px;
+}
+
+#col{
+  font-family: SFSB;
+}
+
+#title{
+  font-family: SFSB;
 }
