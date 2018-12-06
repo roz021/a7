@@ -45,6 +45,9 @@ if(!Array.isArray(friends) || !Array.isArray(sfriends)){
     ]
     };
     $(document).ready(function () {
+        var dataImage = localStorage.getItem('profileimg');
+            meImg = document.getElementById('profilepic');
+            meImg.setAttribute('src', dataImage);
         localStorage.setItem('friends', JSON.stringify(friends));
         localStorage.setItem('sfriends', JSON.stringify(sfriends));
         //FOR THE PREVIEW
@@ -235,7 +238,7 @@ if(!Array.isArray(friends) || !Array.isArray(sfriends)){
 
     <div id="myProfile">
         <a href="myProfile.html">
-            <img src="../images/profpic.jpg" alt="me">
+            <img id="profilepic" src="../images/profpic.jpg" alt="me">
         </a>
     </div>
 
