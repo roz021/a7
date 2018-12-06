@@ -1,18 +1,77 @@
+@font-face{
+  font-family: newgothic;
+  src: url(../News\ Gothic\ Condensed\ Bold.otf);
+}
+
+@font-face{
+  font-family: SFUI;
+  src: url(../SFUI.ttf);
+}
+@font-face{
+  font-family: SFH;
+  src: url(../SFH.otf);
+}
+@font-face{
+  font-family: SFSB;
+  src: url(../SFSB.otf);
+}
+
+body{
+  padding-bottom: 100px;
+}
 #friendsall{
   display:grid;
   grid-gap: 10px;
   grid-template-columns: auto auto auto;
-  background-color: #E6E6E6;
+  /* background:linear-gradient(180deg,rgba(103,206,246,0.5), rgba(0,131,183,0.5)); */
+  background-color: #67CEF6;
   padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
 }
 
+.friends{
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+  border-radius: 10%;
+}
+.friends #propic{
+  border-radius: 50%;
+}
+
+#propic2{
+  border-radius: 50%;
+  position: relative;
+  left: 50px;
+}
+
+.friends h5, .friends h4{
+  font-family:newgothic;
+  cursor: pointer;
+}
+
+.friends h5:hover, .friends h4:hover{
+  color: #67CEF6;
+}
+
+.friends h4{
+  font-size: 20px;
+}
+
+.friends h5{
+  font-size: 15px;
+}
 #sfriendsall {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: auto auto auto;
   background-color: #E6E6E6;
   padding: 10px;
+  /* background:linear-gradient(180deg,rgba(103,206,246,0.5), rgba(0,131,183,0.5)); */
+  background-color: #67CEF6;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
 }
+
+
 
 .friends{
   height:200px;
@@ -44,6 +103,45 @@
   text-align: center;
 } */
 
-.friendsbar{
+#friendsbar{
   padding-top: 50px;
+  font-family: newgothic;
+}
+
+#suggestedbar{
+  padding-top:25px;
+  font-family: newgothic;
+}
+
+.modal-footer button{
+width: 115px;
+height: 75px;
+white-space: normal;
+}
+
+#buttonPlan{
+  font-family: newgothic;
+  font-size: 20px;
+  background-color: white;
+  border: 2px solid rgb(26, 184, 247);
+  color:rgb(26, 184, 247);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+}
+
+#buttonRemove{
+  font-family: newgothic;
+  font-size: 20px;
+  background-color: white;
+  border: 2px solid red;
+  color:red;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+}
+
+#buttonAdd{
+  font-family: newgothic;
+  font-size: 20px;
+  background-color: white;
+  border: 2px solid lightgreen;
+  color:lightgreen;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
 }
