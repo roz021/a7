@@ -43,3 +43,21 @@
   font-family: newgothic;
   padding-left:30px;
 }
+
+#pictures{
+  font-family: newgothic;
+  padding-left:30px;
+}
+
+#workout{
+  position: fixed;
+  top: 8px;
+  z-index:1;
+  right: 3px;
+}
+
+#workoutbut{
+  font-family: newgothic;
+  color:#FFFFFF;
+  background-color: #67CEF6;
+}

@@ -2,7 +2,7 @@
     font-family: newgothic;
     src: url(../News\ Gothic\ Condensed\ Bold.otf);
   }
-  
+
   @font-face{
     font-family: SFUI;
     src: url(../SFUI.ttf);
@@ -15,7 +15,7 @@
     font-family: SFSB;
     src: url(../SFSB.otf);
   }
-  
+
 body{
     margin: 0px;
 }
@@ -55,7 +55,7 @@ body{
     background-color: white;
     border: 2px solid #67CEF6;
     color:#67CEF6;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .button1{
     font-family: newgothic;
@@ -67,7 +67,7 @@ body{
 }
 
 .panel-body{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 /*nav bar css*/
 footer{
