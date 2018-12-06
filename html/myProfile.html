@@ -15,9 +15,14 @@
     </head>
     <script type="text/javascript">
     $(document).ready(function(){
+        var myName = localStorage.getItem('name');
+        document.getElementsByName('myname').innerHTML = myName;
+
         var dataImage = localStorage.getItem('profileimg');
             meImg = document.getElementById('me');
+            meImg2 = document.getElementById('me2');
             meImg.setAttribute('src', dataImage);
+            meImg2.setAttribute('src', dataImage);
     })
     </script>
     <body>
@@ -68,7 +73,7 @@
         <div class="container" id="profilecon">
           <div class="panel panel-default">
             <div id="profilePic">
-                <img class="img-circle center-block" id="me" src="../images/profpic.jpg" alt="me" width="300" height="300">
+                <img class="img-circle center-block" id="me2" src="../images/profpic.jpg" alt="me" width="300" height="300">
                 <h1 class="text-center" id="myname"></h1>
                 <!-- <h3>BIO</h3> -->
                 <p class="text-center"id="mybio"></p>
