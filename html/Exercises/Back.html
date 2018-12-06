@@ -4,7 +4,10 @@
     <head>
         <title>Routines</title>
         <link href="../../css/home.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery.js"></script>
+        <link type="text/css" rel="stylesheet" href="../../css/workout.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <script type="text/javascript">
         $(document).ready(function(){
@@ -64,28 +67,74 @@
           </a>
       </div>
 
-                <div class="diffExercises" id="lats">
-                    <a href="ActualExercises/latpulldowns.html">
-                    <h1>Lat Pulldowns</h1>
-                    </a>
-                 </div>
+      <div class="container" id="exercises">
+        <div class="panel-group">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title"id="title">
+                <a data-toggle="collapse" href="#collapse1">Lat Pulldowns</a>
+              </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse">
+              <div class="panel-body" id="col">
+                <img src="../../images/aexerciseimg/latpulldown.jpg" alt="crunch" id=eximg>
+                Crunches are where you lie on the ground with your legs bent in an upside down v pose.
+              Then you squeeze your abs and raise up a bit to get your upper body off the ground about
+            30 degrees and then go back down.</div>
+            </div>
+          </div>
+        </div>
 
-                 <div class="diffExercises" id="Pullups">
-                        <a href="ActualExercises/pullups.html">
-                        <h1>Pullups</h1>
-                        </a>
-                     </div>
-                 <div class="diffExercises" id="deads">
-                            <a href="ActualExercises/deadlifts.html">
-                            <h1>Deadlifts</h1>
-                            </a>
-                         </div>
-                 <div class="diffExercises" id="cables">
-                                <a href="ActualExercises/seatedcablerows.html">
-                                <h1>Seated Cable Rows</h1>
-                                </a>
-                             </div>
+        <div class="panel-group">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title" id="title">
+                <a data-toggle="collapse" href="#collapse2">Pullups</a>
+              </h4>
+            </div>
+            <div id="collapse2" class="panel-collapse collapse">
+              <div class="panel-body" id="col">
+              <img src="../../images/aexerciseimg/pullup.jpg" alt="crunch" id=eximg>
+                Put your body in a sitting position with your upper body at an 45 degree angle and
+              legs at an upside down v pose. Keep your arms close to your chest and twist in a left and right
+              motion. You will feel a burn on the sides of your core.</div>
+            </div>
+          </div>
+        </div>
 
+        <div class="panel-group">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title" id="title">
+                <a data-toggle="collapse" href="#collapse3">Deadlifts</a>
+              </h4>
+            </div>
+            <div id="collapse3" class="panel-collapse collapse">
+              <div class="panel-body" id="col">Similar to crunches, sit down with your butt planted on the ground and legs
+              in a upside down v position. this time, clench your abs and go all the way up until
+              your chest touches your knees. Then go back down and that will be one rep.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-group">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title" id="title">
+                <a data-toggle="collapse" href="#collapse4">Seated Cable Rows</a>
+              </h4>
+            </div>
+            <div id="collapse4" class="panel-collapse collapse">
+              <div class="panel-body" id="col">A slight variation to the situp. This time, using a decline bench, place your
+              body and hook your legs through the leg rests and enact the situp position. This
+              exercise focuses more on your lower abs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
 
 </body>
 </html>
