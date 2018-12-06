@@ -33,11 +33,30 @@ body{
 
 }
 
+.modal-title{
+    font-family: newgothic;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.form-control{
+    font-family: SFSB;
+
+}
+
 .button{
     width: 153px;
     height: 51px;
 }
 
+#buttonPost{
+    font-family: newgothic;
+    font-size: 20px;
+    background-color: white;
+    border: 2px solid #67CEF6;
+    color:#67CEF6;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+}
 .button1{
     font-family: newgothic;
     font-size: 20px;
