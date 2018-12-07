@@ -1,0 +1,23 @@
+@font-face{
+    font-family: newgothic;
+    src: url(../News\ Gothic\ Condensed\ Bold.otf);
+  }
+  
+#wrapper{
+    text-align: center;
+}
+
+h3{
+    font-family: newgothic;
+    color: #67cef6;
+    text-align: center;
+}
+
+h4{
+    font-family: newgothic;
+}
+
+img{
+    border: 2px solid #67CEF6;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
