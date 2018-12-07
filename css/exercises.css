@@ -1,0 +1,42 @@
+@font-face{
+    font-family: newgothic;
+    src: url(../News\ Gothic\ Condensed\ Bold.otf);
+  }
+
+  @font-face{
+    font-family: SFUI;
+    src: url(../SFUI.ttf);
+  }
+  @font-face{
+    font-family: SFH;
+    src: url(../SFH.otf);
+  }
+  @font-face{
+    font-family: SFSB;
+    src: url(../SFSB.otf);
+  }
+
+  #extitle, #musclegroup{
+    font-family: newgothic;
+    text-transform: uppercase;
+    
+  }
+
+  #steps{
+    padding-top: 10px;
+  }
+
+  #hed{
+    font-family: newgothic;
+    text-transform: uppercase;
+
+  }
+
+  li{
+    margin: 5px 0;
+    font-family: SFSB;
+  }
+
+  #desc{
+    padding-top: 10px;
+  }
